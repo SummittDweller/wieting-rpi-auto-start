@@ -11,7 +11,10 @@ The Raspberry Pi is a model `3B+` running _Raspbian Lite_ `Bullseye` with its ki
 ### 16-Jan-2022  
 
 - The kiosk is working nicely EXCEPT there is apparently no HTML audio output via the HDMI port.
+
 - The 32 GB micro SD card was backed up to my MacBook Pro per [How to Back Up and Restore Your Raspberry Pi SD Card on Mac](https://howchoo.com/pi/create-a-backup-image-of-your-raspberry-pi-sd-card-in-mac-osx).
   - Find the micro SD using `diskutil list`
   - `sudo dd if=/dev/disk2 of=/Users/mark/wieting-kiosk-no-audio.dmg`
+
+- To get Chromium audio working try: `chromium-browser --disable-features=AudioServiceSandbox`  
  
