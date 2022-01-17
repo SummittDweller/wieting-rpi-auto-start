@@ -7,6 +7,9 @@ Documenting the Wieting Theatre's RPI (Raspberry Pi) pre-show auto-start KIOSK c
 
 The Raspberry Pi is a model `3B+` running _Raspbian Lite_ `Bullseye` with its kiosk configuration per [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/).  
 
+### 17-Jan-2022  
+
+- Found the key to media `autoplay` at https://stackoverflow.com/questions/49921453/how-to-allow-video-autoplay-in-a-google-chrome-kiosk-app-in-version-66-or-later.  Added `--autoplay-policy=no-user-gesture-required` to the `chromium-browser` statement in `~/kiosk` and it works!
 
 ### 16-Jan-2022  
 
@@ -16,5 +19,8 @@ The Raspberry Pi is a model `3B+` running _Raspbian Lite_ `Bullseye` with its ki
   - Find the micro SD using `diskutil list`
   - `sudo dd if=/dev/disk2 of=/Users/mark/wieting-kiosk-no-audio.dmg`
 
-- To get Chromium audio working try: `chromium-browser --disable-features=AudioServiceSandbox`  
+- To get Chromium audio working try: `chromium-browser --disable-features=AudioServiceSandbox`.  Nope.
+
+
+  
  
