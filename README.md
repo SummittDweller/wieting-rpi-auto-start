@@ -11,6 +11,10 @@ The Raspberry Pi is a model `3B+` running _Raspbian Lite_ `Bullseye` with its ki
 
 - Found the key to media `autoplay` at https://stackoverflow.com/questions/49921453/how-to-allow-video-autoplay-in-a-google-chrome-kiosk-app-in-version-66-or-later.  Added `--autoplay-policy=no-user-gesture-required` to the `chromium-browser` statement in `~/kiosk` and it works!
 
+- Ok, I fixed some things in the site's code and now it works beautifully!
+
+- Made a new backup on my Mac Mini using `sudo dd if=/dev/disk4 of=/Users/mark/wieting-rpi-auto-start.dmg`
+
 ### 16-Jan-2022  
 
 - The kiosk is working nicely EXCEPT there is apparently no HTML audio output via the HDMI port.
