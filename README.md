@@ -7,6 +7,35 @@ Documenting the Wieting Theatre's RPI (Raspberry Pi) pre-show auto-start KIOSK c
 
 The Raspberry Pi is a model `3B+` running _Raspbian Lite_ `Bullseye` with its kiosk configuration per [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/).  
 
+## First Steps
+
+Before you can work through the [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/) procedure it may be necessary to do the following:
+
+  - Power-up the Raspberry Pi while connected to a keyboard, mouse, display and Ethernet.  After a minute or two you should see a command prompt on the display.
+
+  - Run `Raspbian's` command line configuration tool by entering `sudo raspi-config`. In the configuration tool find and set the following:
+
+    - Set the timezone to `America` and `Chicago`.
+    - Set the wireless LAN country to `US`.
+    - Set the keyboard to `Generic 105-key` and layout to `US`.
+    - Enable `ssh` access.
+    - Change the `pi` user password from the default (`raspberry`) to something more secure.
+
+  - Reboot if/when prompted to do so.
+
+  - After booting back up login to the terminal as user `pi` with the new password.
+
+  - Find the device's local IP address using `sudo ipconfig`.  Look for the assigned IP address, probably of the form `192.168.0.x`.  Make a note of this address.
+
+
+## Complete Setup via `ssh`
+
+I find it easiest to complete the remaining setup steps by connecting to the device from my Mac using `ssh`.  That way I can have access to this document and other resources on the Mac AND have the ability to copy/paste from the Mac to the Raspberry Pi terminal.
+
+To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
+
+## History
+
 ### 16-Jan-2022  
 
 - The kiosk is working nicely EXCEPT there is apparently no HTML audio output via the HDMI port.
