@@ -1,17 +1,17 @@
-# wieting-rpi-auto-start  
+# kiosk-wieting-pre-show  
 
-Documenting the Wieting Theatre's RPI (Raspberry Pi) pre-show auto-start KIOSK config.  
+Documenting the Wieting Theatre's RPI (_Raspberry Pi_) pre-show auto-start **kiosk** config.  
 
 
 **Attention**: Use an `Alt-F4` keystroke combination to stop the kiosk and get back to a command prompt.  
 
-The Raspberry Pi is a model `3B+` running _Raspbian Lite_ `Bullseye` with its kiosk configuration per [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/).  
+The _Raspberry Pi_ is a model `3B+` running _Raspbian Lite_ `Bullseye` with its kiosk configuration per [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/).  
 
 ## First Steps
 
 Before you can work through the [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/) procedure it may be necessary to do the following:
 
-  - Power-up the Raspberry Pi while connected to a keyboard, mouse, display and Ethernet.  After a minute or two you should see a command prompt on the display.
+  - Power-up the _Raspberry Pi_ while connected to a keyboard, mouse, display and Ethernet.  After a minute or two you should see a command prompt on the display.
 
   - Run `Raspbian's` command line configuration tool by entering `sudo raspi-config`. In the configuration tool find and set the following:
 
@@ -61,9 +61,13 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 - It was NOT possible to restore the backup mentioned above to this 16 GB card since the backup is of a 32 GB image.  
 
-- The 16 GB card has been installed in pristine `Raspberry Pi 4B+` where it is ready for configuration.  
+- The 16 GB card has been installed in a pristine _Raspberry Pi_ `4B+` where it is ready for configuration.  
 
+- Configuration is complete.  It works!  
 
+- Now making a backup of the 16 GB micro SD card using the same process as before: `sudo dd if=/dev/disk4 of=/Users/mark/kiosk-wieting-pre-show.dmg`
+
+- Renaming this repository and document from `wieting-rpi-auto-start` to `kiosk-wieting-pre-show`.
 
 
   
