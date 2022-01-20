@@ -7,6 +7,9 @@ Documenting the Wieting Theatre's RPI (_Raspberry Pi_) pre-show auto-start **kio
 
 The _Raspberry Pi_ is a model `3B+` running _Raspbian Lite_ `Bullseye` with its kiosk configuration per [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/).  
 
+As of 19-Jan-2022 there is a second _Raspberry Pi_, this one a model `4B+` _Raspbian Lite_ `Bullseye` with its kiosk configuration matching the original config mentioned above.  
+
+
 ## First Steps
 
 Before you can work through the [Configure a Raspberry Pi as a kiosk display](https://reelyactive.github.io/diy/pi-kiosk/) procedure it may be necessary to do the following:
@@ -68,6 +71,12 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 - Now making a backup of the 16 GB micro SD card using the same process as before: `sudo dd if=/dev/disk4 of=/Users/mark/kiosk-wieting-pre-show.dmg`
 
 - Renaming this repository and document from `wieting-rpi-auto-start` to `kiosk-wieting-pre-show`.
+
+### 20-Jan-2022
+
+- There's a new `dyanmic-timing` branch of the [Wieting website code](https://github.com/SummittDweller/wieting-one-click-cms) dedicated to implementing variable timing of clips played at https://Wieting.TamaToledo.com/pre-show.  
+
+- In addition to adding `dynamic-timing` I'd also like to investigate rotating the video output 90-degrees.  See the last half of [Rotating the screen for the Raspberry Pi 4](https://pimylifeup.com/raspberry-pi-rotate-screen/) for a possible solution.  
 
 
   
