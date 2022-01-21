@@ -78,6 +78,11 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 - In addition to adding `dynamic-timing` I'd also like to investigate rotating the video output 90-degrees.  See the last half of [Rotating the screen for the Raspberry Pi 4](https://pimylifeup.com/raspberry-pi-rotate-screen/) for a possible solution.  
 
+- Giving up on the `dynamic-timing` approach since manipulating the `setInterval` and `setTimeout` functions in Javascript looks dicey.  Instead, I've settled on the approach of using multiple `pre-show` objects, each 15-seconds long, to handle objects that need multiple screens or longer durations.
 
-  
+### 21-Jan-2022
+
+- Adding more 30-second, and longer, audio clips and working to convert one or two of our ads into the new `pre-show` format.  
+
+- Need to try and introduce .mp4 playback within the new `pre-show` scheme.  Also looking to briefly try and extract .mp4 video from a DCP package.
  
