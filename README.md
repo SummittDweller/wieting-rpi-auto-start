@@ -84,5 +84,17 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 - Adding more 30-second, and longer, audio clips and working to convert one or two of our ads into the new `pre-show` format.  
 
-- Need to try and introduce .mp4 playback within the new `pre-show` scheme.  Also looking to briefly try and extract .mp4 video from a DCP package.
+- Need to try and introduce .mp4 playback within the new `pre-show` scheme.  Also looking to briefly try and extract .mp4 video from a DCP package.  _No DCP extraction but I got .mp4 playback working nicely!_
+
+### 28-Jan-2022
+
+- Tasked Mackenzie with creating and classifying more 15- and 30-second audio clips.
+
+### 30-Jan-2022
+
+- Making a record of the `pi` user password on the Wieting's Raspberry Pi.  `Alt-F4` works to interrupt playback and get to a terminal prompt from the keybaord.  `ssh pi@10.0.0.12` also works from the Mac Mini in the booth.
+
+- Added a `--force-device-scaling-factor=1.333` to the _chromium_ kiosk startup command in the `~/kiosk` file on the Wieting's Raspberry Pi.  It works!
+
+
  
