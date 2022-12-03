@@ -39,24 +39,43 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 ## History
 
-### 16-Jan-2022  
+### 2-Dec-2022
 
-- The kiosk is working nicely EXCEPT there is apparently no HTML audio output via the HDMI port.
+- Something in the system, either the _chromium_ kiosk or the `/pre-show` Javascript in the website appears to stop showing images after about 15 minutes.
 
-- The 32 GB micro SD card was backed up to my MacBook Pro per [How to Back Up and Restore Your Raspberry Pi SD Card on Mac](https://howchoo.com/pi/create-a-backup-image-of-your-raspberry-pi-sd-card-in-mac-osx).
-  - Find the micro SD using `diskutil list`
-  - `sudo dd if=/dev/disk2 of=/Users/mark/wieting-kiosk-no-audio.dmg`  
+- Mackenzie and I looked a the `~/kiosk` script this evening but didn't see anything there that would equate to a 15-minute timer.  I need to look at the `/pre-show` Javascript to be sure there's no limit there.  
 
+### 15-Apr-2022
 
-- To get Chromium audio working try: `chromium-browser --disable-features=AudioServiceSandbox`.  Nope.
+- Mackenzie managed to get the kiosk to simultaneously play .mp4 tracks at random, and I set the website `/pre-show` to play only 15-second clips with NO accompanying audio.  This works nicely now that we've secured plenty of appropriate, royalty-free music tracks from Cat Campbell Currier. 
 
-### 17-Jan-2022  
+- The new .mp4 tracks are stored on the Raspberry Pi for playback, and that playback starts automatically when the unit boots up.
 
-- Found the key to media `autoplay` at https://stackoverflow.com/questions/49921453/how-to-allow-video-autoplay-in-a-google-chrome-kiosk-app-in-version-66-or-later.  Added `--autoplay-policy=no-user-gesture-required` to the `chromium-browser` statement in `~/kiosk` and it works!
+- The `--force-device-scaling-factor=1.333` option added to the _chromium_ kiosk startup command in the `~/kiosk` file no longer appears to be working?  :frowning:
 
-- Ok, I fixed some things in the site's code and now it works beautifully!
+### 30-Jan-2022
 
-- Made a new backup on my Mac Mini using `sudo dd if=/dev/disk4 of=/Users/mark/wieting-rpi-auto-start.dmg`
+- Making a record of the `pi` user password on the Wieting's Raspberry Pi.  `Alt-F4` works to interrupt playback and get to a terminal prompt from the keybaord.  `ssh pi@10.0.0.41` also works from the Mac Mini in the booth.
+
+- Added a `--force-device-scaling-factor=1.333` to the _chromium_ kiosk startup command in the `~/kiosk` file on the Wieting's Raspberry Pi.  It works!
+
+### 28-Jan-2022
+
+- Tasked Mackenzie with creating and classifying more 15- and 30-second audio clips.
+
+### 21-Jan-2022
+
+- Adding more 30-second, and longer, audio clips and working to convert one or two of our ads into the new `pre-show` format.  
+
+- Need to try and introduce .mp4 playback within the new `pre-show` scheme.  Also looking to briefly try and extract .mp4 video from a DCP package.  _No DCP extraction but I got .mp4 playback working nicely!_
+
+### 20-Jan-2022
+
+- There's a new `dyanmic-timing` branch of the [Wieting website code](https://github.com/SummittDweller/wieting-one-click-cms) dedicated to implementing variable timing of clips played at https://Wieting.TamaToledo.com/pre-show.  
+
+- In addition to adding `dynamic-timing` I'd also like to investigate rotating the video output 90-degrees.  See the last half of [Rotating the screen for the Raspberry Pi 4](https://pimylifeup.com/raspberry-pi-rotate-screen/) for a possible solution.  
+
+- Giving up on the `dynamic-timing` approach since manipulating the `setInterval` and `setTimeout` functions in Javascript looks dicey.  Instead, I've settled on the approach of using multiple `pre-show` objects, each 15-seconds long, to handle objects that need multiple screens or longer durations.
 
 ### 19-Jan-2022
 
@@ -72,29 +91,21 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 - Renaming this repository and document from `wieting-rpi-auto-start` to `kiosk-wieting-pre-show`.
 
-### 20-Jan-2022
+### 17-Jan-2022  
 
-- There's a new `dyanmic-timing` branch of the [Wieting website code](https://github.com/SummittDweller/wieting-one-click-cms) dedicated to implementing variable timing of clips played at https://Wieting.TamaToledo.com/pre-show.  
+- Found the key to media `autoplay` at https://stackoverflow.com/questions/49921453/how-to-allow-video-autoplay-in-a-google-chrome-kiosk-app-in-version-66-or-later.  Added `--autoplay-policy=no-user-gesture-required` to the `chromium-browser` statement in `~/kiosk` and it works!
 
-- In addition to adding `dynamic-timing` I'd also like to investigate rotating the video output 90-degrees.  See the last half of [Rotating the screen for the Raspberry Pi 4](https://pimylifeup.com/raspberry-pi-rotate-screen/) for a possible solution.  
+- Ok, I fixed some things in the site's code and now it works beautifully!
 
-- Giving up on the `dynamic-timing` approach since manipulating the `setInterval` and `setTimeout` functions in Javascript looks dicey.  Instead, I've settled on the approach of using multiple `pre-show` objects, each 15-seconds long, to handle objects that need multiple screens or longer durations.
+- Made a new backup on my Mac Mini using `sudo dd if=/dev/disk4 of=/Users/mark/wieting-rpi-auto-start.dmg`
 
-### 21-Jan-2022
+### 16-Jan-2022  
 
-- Adding more 30-second, and longer, audio clips and working to convert one or two of our ads into the new `pre-show` format.  
+- The kiosk is working nicely EXCEPT there is apparently no HTML audio output via the HDMI port.
 
-- Need to try and introduce .mp4 playback within the new `pre-show` scheme.  Also looking to briefly try and extract .mp4 video from a DCP package.  _No DCP extraction but I got .mp4 playback working nicely!_
-
-### 28-Jan-2022
-
-- Tasked Mackenzie with creating and classifying more 15- and 30-second audio clips.
-
-### 30-Jan-2022
-
-- Making a record of the `pi` user password on the Wieting's Raspberry Pi.  `Alt-F4` works to interrupt playback and get to a terminal prompt from the keybaord.  `ssh pi@10.0.0.12` also works from the Mac Mini in the booth.
-
-- Added a `--force-device-scaling-factor=1.333` to the _chromium_ kiosk startup command in the `~/kiosk` file on the Wieting's Raspberry Pi.  It works!
+- The 32 GB micro SD card was backed up to my MacBook Pro per [How to Back Up and Restore Your Raspberry Pi SD Card on Mac](https://howchoo.com/pi/create-a-backup-image-of-your-raspberry-pi-sd-card-in-mac-osx).
+  - Find the micro SD using `diskutil list`
+  - `sudo dd if=/dev/disk2 of=/Users/mark/wieting-kiosk-no-audio.dmg`  
 
 
- 
+- To get Chromium audio working try: `chromium-browser --disable-features=AudioServiceSandbox`.  Nope.
