@@ -1,7 +1,7 @@
 # kiosk
 
-The `kiosk` shell script pulled from the Raspberry Pi pre-show kiosk device on 4-Dec-2022.
-The following added to the script on 20-Dec-2022 to try and capture a log of chromium behavior:
+The `kiosk` shell script pulled from the Raspberry Pi pre-show kiosk device on 4-Dec-2022.  
+The following added to the script on 20-Dec-2022 to try and capture a log (~/chrome_debug.log) of chromium behavior:  
   `--enable-logging=stderr --v=1 > log.txt 2>&1`
 
 `pi@raspberrypi:~ $ cat kiosk`
