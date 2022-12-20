@@ -39,6 +39,12 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 ## History
 
+### 20-Dec-2022
+
+- Added Chromium logging to `kiosk` as documented in the attached `kiosk` script.
+- Added my Chromium lanuch command to a new `browser.sh` script, and
+- Added crontab specification to run the new `browser.sh` script every 10 minutes.
+
 ### 2-Dec-2022
 
 - Something in the system, either the _chromium_ kiosk or the `/pre-show` Javascript in the website appears to stop showing images after about 15 minutes.
