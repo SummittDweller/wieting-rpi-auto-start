@@ -43,6 +43,8 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 - Old RPI in the booth failed with 3 bad memory blocks.  Using the procedure at https://objsal.medium.com/raspberry-pi-backup-restore-from-macos-57c376937a3a to back that Micro SD card up to /Volumes/iMac500GB.
 - I have my newer Raspberry Pi 4B+ working (video only thus far) here at home and will install it in the booth later today.
+- Updated the "new" RPI 4B+ and installed VLC per https://groups.google.com/g/reading-hackspace/c/VJYb4x9LH8w?pli=1.
+- Using the procedure at https://objsal.medium.com/raspberry-pi-backup-restore-from-macos-57c376937a3a to back the new Micro SD card up to /Volumes/iMac500GB/wieting-preshow-rpi-backup.img.gz.
 
 ### 20-Dec-2022
 
