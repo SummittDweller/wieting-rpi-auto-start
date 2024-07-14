@@ -39,6 +39,11 @@ To connect:  `ssh pi@192.168.0.x`, repeating the IP address obtained above.
 
 ## History
 
+### 14-Jul-2024
+
+- Old RPI in the booth failed with 3 bad memory blocks.  Using the procedure at https://objsal.medium.com/raspberry-pi-backup-restore-from-macos-57c376937a3a to back that Micro SD card up to /Volumes/iMac500GB.
+- I have my newer Raspberry Pi 4B+ working (video only thus far) here at home and will install it in the booth later today.
+
 ### 20-Dec-2022
 
 - Added Chromium logging to `kiosk` as documented in the attached `kiosk` script.
